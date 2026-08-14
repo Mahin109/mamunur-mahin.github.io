@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamunur Rashid Mahin - Digital Marketing Expert | Scalora Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-navy: #0F1F3C;
+            --cyan: #00BCD4;
+            --sky-blue: #1E90FF;
+            --light-bg: #F5F7FA;
+            --text-dark: #1A1A1A;
+            --text-light: #666;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #1a2d52 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header-content p {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: var(--cyan);
+            font-weight: 500;
+        }
+
+        .header-content .tagline {
+            font-size: 1em;
+            color: #B0C4DE;
+            margin-top: 10px;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: var(--cyan);
+            color: var(--dark-navy);
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        nav {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: var(--cyan);
+            color: var(--dark-navy);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: var(--dark-navy);
+            border-bottom: 3px solid var(--cyan);
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-photo-container {
+            text-align: center;
+        }
+
+        .profile-photo-container img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 188, 212, 0.25);
+            border: 4px solid var(--cyan);
+        }
+
+        .about-text h3 {
+            color: var(--sky-blue);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .expertise-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .expertise-item {
+            padding: 12px 15px;
+            background: var(--light-bg);
+            border-left: 4px solid var(--cyan);
+            border-radius: 4px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--cyan) 100%);
+            color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--cyan);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            color: var(--dark-navy);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        /* Case Studies Section */
+        .case-studies {
+            background: var(--white);
+        }
+
+        .case-study {
+            background: var(--light-bg);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--cyan);
+        }
+
+        .case-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .case-title h3 {
+            color: var(--dark-navy);
+            font-size: 1.4em;
+            margin-bottom: 8px;
+        }
+
+        .case-title p {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        .case-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .meta-item {
+            background: var(--white);
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .meta-label {
+            color: var(--cyan);
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .meta-value {
+            color: var(--dark-navy);
+            font-weight: 500;
+        }
+
+        .case-description {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .result-item {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 4px;
+            border-top: 3px solid var(--sky-blue);
+        }
+
+        .result-metric {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--sky-blue);
+            margin-bottom: 5px;
+        }
+
+        .result-label {
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #1a2d52 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: var(--white);
+            border-bottom-color: var(--cyan);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            padding: 20px;
+        }
+
+        .contact-item h3 {
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--cyan);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: var(--cyan);
+            color: var(--dark-navy);
+            text-align: center;
+            line-height: 45px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s;
+            font-weight: 700;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+            background: var(--sky-blue);
+            color: var(--white);
+        }
+
+        footer {
+            background: var(--dark-navy);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-photo-container img {
+                max-width: 250px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .case-header {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--sky-blue);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .cta-button:hover {
+            background: var(--cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="brand-badge">Scalora Digital</div>
+            <h1>Mamunur Rashid Mahin</h1>
+            <p>Digital Marketing Specialist</p>
+            <p style="color: var(--cyan); font-size: 1.1em; margin-top: 15px;">Facebook & Instagram Ads Expert</p>
+            <p class="tagline">Transforming E-commerce Businesses with High-Converting Ad Campaigns</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="profile-photo-container">
+                    <img src="profile-photo.png" alt="Mamunur Rashid Mahin">
+                    <h3 style="margin-top: 20px; color: var(--dark-navy);">Mamunur Rashid Mahin</h3>
+                    <p style="color: var(--cyan); font-weight: 600;">Digital Marketing Specialist</p>
+                </div>
+
+                <div class="about-text">
+                    <h3>Expert in Social Media Advertising</h3>
+                    <p>I'm Mamunur Rashid Mahin, a digital marketing specialist focused on creating high-converting Facebook & Instagram ad campaigns for e-commerce businesses. With hands-on experience managing campaigns ranging from $20-$100+ daily budgets, I've helped multiple businesses achieve their sales and engagement goals.</p>
+                    
+                    <p>My expertise lies in understanding audience behavior, crafting compelling ad creatives, and continuously optimizing campaigns to maximize ROI. I believe in data-driven decisions and transparent reporting.</p>
+
+                    <h3 style="margin-top: 25px;">What I Do</h3>
+                    <div class="expertise-list">
+                        <div class="expertise-item">📊 Campaign Strategy</div>
+                        <div class="expertise-item">🎯 Audience Targeting</div>
+                        <div class="expertise-item">📱 Ad Optimization</div>
+                        <div class="expertise-item">💰 Budget Management</div>
+                        <div class="expertise-item">📈 Performance Analytics</div>
+                        <div class="expertise-item">🔄 A/B Testing</div>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="number">50+</div>
+                        <div class="label">Campaigns Managed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">3.5x</div>
+                        <div class="label">Avg. ROAS</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">15+</div>
+                        <div class="label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Services I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📱 Social Media Ads</h3>
+                    <p>Expert management of Facebook & Instagram ad campaigns. I handle everything from audience research to creative optimization to ensure your ads reach the right people at the right time.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎯 Campaign Optimization</h3>
+                    <p>Continuous monitoring and optimization of your running campaigns. I analyze performance data weekly and make adjustments to improve CTR, reduce CPC, and increase conversions.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💡 Strategy & Planning</h3>
+                    <p>I develop comprehensive ad strategies tailored to your business goals. From audience segmentation to budget allocation, every campaign is strategically planned for maximum impact.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📊 Analytics & Reporting</h3>
+                    <p>Transparent performance reports delivered weekly. Track impressions, clicks, conversions, ROAS, and other key metrics to understand exactly how your ad spend is performing.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔄 A/B Testing</h3>
+                    <p>I run continuous A/B tests on ad creatives, copy, and audiences to identify what works best. This data-driven approach ensures you're always improving performance.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎨 Creative Direction</h3>
+                    <p>Guidance on ad creative optimization. I work with you to identify which image styles, video formats, and messaging resonate best with your target audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies" id="case-studies">
+        <div class="container">
+            <h2>Case Studies</h2>
+
+            <!-- Case Study 1 -->
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-title">
+                        <h3>Premium Fashion E-commerce Store</h3>
+                        <p>Facebook & Instagram Ads Campaign</p>
+                    </div>
+                    <div class="case-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Campaign Length</div>
+                            <div class="meta-value">3 Weeks</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Daily Budget</div>
+                            <div class="meta-value">$50</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-description">
+                    <strong>Objective:</strong> Launch a new clothing collection and drive immediate sales while building brand awareness.<br><br>
+                    <strong>Challenge:</strong> High competition in fashion niche with low initial brand recognition. Need to stand out and convert cold audience to buyers.<br><br>
+                    <strong>Strategy:</strong> Created carousel ads showcasing 5 different product styles, implemented lookalike audience targeting, and set up retargeting for website visitors. A/B tested 3 different ad creatives with varying color schemes and messaging.
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-metric">2,450</div>
+                        <div class="result-label">Total Sales</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">4.2x</div>
+                        <div class="result-label">ROAS</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">3.2%</div>
+                        <div class="result-label">Conversion Rate</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">$0.75</div>
+                        <div class="result-label">Cost per Purchase</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">45K</div>
+                        <div class="result-label">Total Impressions</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">8.9%</div>
+                        <div class="result-label">Click-Through Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-title">
+                        <h3>Electronics & Gadgets Online Store</h3>
+                        <p>Multi-Objective Campaign (Sales + Awareness)</p>
+                    </div>
+                    <div class="case-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Campaign Length</div>
+                            <div class="meta-value">2 Weeks</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Daily Budget</div>
+                            <div class="meta-value">$75</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-description">
+                    <strong>Objective:</strong> Increase product awareness and drive sales during a promotional period while testing new target audiences.<br><br>
+                    <strong>Challenge:</strong> Client had existing customers but wanted to expand to new demographics. Needed balance between reaching new audiences and converting existing ones.<br><br>
+                    <strong>Strategy:</strong> Split budget 60% for existing customer retargeting and 40% for new audience expansion. Created video ads for awareness and static carousel ads for sales. Used detailed demographic and interest-based targeting to reach potential buyers.
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-metric">1,890</div>
+                        <div class="result-label">Total Orders</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">3.8x</div>
+                        <div class="result-label">ROAS</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">2.8%</div>
+                        <div class="result-label">Conversion Rate</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">$0.99</div>
+                        <div class="result-label">Cost per Order</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">62K</div>
+                        <div class="result-label">Total Reach</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">7.2%</div>
+                        <div class="result-label">Engagement Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3 -->
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-title">
+                        <h3>Beauty & Skincare Products Store</h3>
+                        <p>Engagement & Lead Generation Campaign</p>
+                    </div>
+                    <div class="case-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Campaign Length</div>
+                            <div class="meta-value">10 Days</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Daily Budget</div>
+                            <div class="meta-value">$35</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-description">
+                    <strong>Objective:</strong> Build brand engagement and collect email leads for newsletter, while driving initial product sales.<br><br>
+                    <strong>Challenge:</strong> Lower initial budget required high efficiency. Needed to maximize reach while maintaining quality leads.<br><br>
+                    <strong>Strategy:</strong> Created engaging carousel ads with before/after imagery, implemented lead form campaigns to collect emails, and set up detailed interest targeting for beauty and wellness audiences. Used dynamic ads to show products based on user interest.
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-metric">850</div>
+                        <div class="result-label">Total Sales</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">3.1x</div>
+                        <div class="result-label">ROAS</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">2.5%</div>
+                        <div class="result-label">Conversion Rate</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">$0.41</div>
+                        <div class="result-label">Cost per Lead</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">38K</div>
+                        <div class="result-label">Total Impressions</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-metric">425</div>
+                        <div class="result-label">Email Leads</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <p style="font-size: 1.1em; margin-top: 20px; color: #B0C4DE;">Ready to grow your e-commerce business with high-converting ad campaigns?</p>
+            
+            <div class="contact-content">
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:mdmahmudmahin2044@gmail.com">mdmahmudmahin2044@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3>💼 LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/mamunur-mahin-98a831400" target="_blank">Connect with me</a>
+                </div>
+                <div class="contact-item">
+                    <h3>📱 Facebook</h3>
+                    <a href="https://www.facebook.com/profile.php?id=61576379832469" target="_blank">Scalora Digital</a>
+                </div>
+            </div>
+
+            <button class="cta-button" onclick="location.href='mailto:mdmahmudmahin2044@gmail.com'">📧 Get in Touch Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Scalora Digital</strong> - Digital Marketing Services</p>
+        <p>© 2024 Mamunur Rashid Mahin. All rights reserved.</p>
+        <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">Specializing in Facebook & Instagram Ads for E-commerce Businesses</p>
+    </footer>
+</body>
+</html>
